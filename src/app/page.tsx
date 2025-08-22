@@ -200,6 +200,110 @@ const OfferingsSection = () => {
   );
 };
 
+// --- Meet the Mentors Section ---
+const MentorsSection = () => {
+  const mentors = [
+    {
+      name: "Dr. Rajesh Kumar",
+      title: "Former VP Engineering, Google",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+      bio: "IIT KGP '95 alumnus with 25+ years in tech. Led engineering teams at Google, Microsoft, and multiple successful startups. Passionate about mentoring next-gen entrepreneurs.",
+      expertise: "AI/ML, Product Strategy, Team Building",
+      company: "Ex-Google, Microsoft"
+    },
+    {
+      name: "Priya Mehta",
+      title: "Founder & CEO, HealthTech Innovations",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face",
+      bio: "IIT KGP '08 graduate who built a $50M healthcare startup. Expert in healthcare technology, regulatory compliance, and scaling startups in regulated industries.",
+      expertise: "Healthcare Tech, Regulatory, Scaling",
+      company: "HealthTech Innovations"
+    },
+    {
+      name: "Arjun Singh",
+      title: "Managing Director, Venture Capital",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
+      bio: "IIT KGP '92 alumnus with 20+ years in venture capital. Has invested in 50+ startups with 15 successful exits. Specializes in fintech and enterprise software.",
+      expertise: "Venture Capital, FinTech, Enterprise",
+      company: "Sequoia Capital India"
+    },
+    {
+      name: "Dr. Anjali Desai",
+      title: "Chief Technology Officer, Green Energy Corp",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
+      bio: "IIT KGP '06 PhD in Renewable Energy. Pioneer in sustainable technology with 15+ patents. Built and sold two cleantech companies for over $100M combined.",
+      expertise: "Clean Energy, Deep Tech, IP Strategy",
+      company: "Green Energy Corp"
+    },
+    {
+      name: "Vikram Sharma",
+      title: "Serial Entrepreneur & Angel Investor",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
+      bio: "IIT KGP '00 alumnus who founded 3 successful startups. Exited two companies for $200M+. Now angel investing and mentoring early-stage startups.",
+      expertise: "B2B SaaS, Market Entry, Exit Strategy",
+      company: "Multiple Exits"
+    },
+    {
+      name: "Dr. Meera Patel",
+      title: "Head of Innovation, Global Tech Inc",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face",
+      bio: "IIT KGP '10 graduate leading innovation at Fortune 500 company. Expert in corporate innovation, strategic partnerships, and building innovation ecosystems.",
+      expertise: "Corporate Innovation, Partnerships, Strategy",
+      company: "Global Tech Inc"
+    }
+  ];
+
+  return (
+    <section className="bg-gray-50 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 className="text-3xl font-bold text-center text-gray-900 mb-4">
+          Meet the Mentors
+        </h3>
+        <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Learn from IIT KGP alumni who have built successful companies and are passionate about helping the next generation of entrepreneurs
+        </p>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {mentors.map((mentor, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <img 
+                    src={mentor.image} 
+                    alt={mentor.name}
+                    className="w-16 h-16 rounded-full mr-4 object-cover"
+                  />
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-lg">{mentor.name}</h4>
+                    <p className="text-sm text-blue-600 font-medium">{mentor.title}</p>
+                    <p className="text-xs text-gray-500">{mentor.company}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  {mentor.bio}
+                </p>
+                <div className="bg-blue-50 p-3 rounded-lg">
+                  <p className="text-xs font-semibold text-blue-800 mb-1">Expertise:</p>
+                  <p className="text-xs text-blue-700">{mentor.expertise}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <p className="text-gray-600 mb-4">
+            Our mentor network includes 50+ successful IIT KGP alumni across various industries
+          </p>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg cursor-pointer">
+            View All Mentors
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // --- Testimonials Section ---
 const TestimonialsSection = () => {
   const testimonials = [
@@ -238,7 +342,7 @@ const TestimonialsSection = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
               <div className="flex items-center mb-4">
                 <img 
                   src={testimonial.image} 
@@ -324,6 +428,7 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <OfferingsSection />
+        <MentorsSection />
         <TestimonialsSection />
         <SponsorsSection />
         <FinalCTASection />
